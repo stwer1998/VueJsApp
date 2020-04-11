@@ -16,14 +16,15 @@ Vue.use(Vuelidate)
 Vue.use(messagePlugin)
 Vue.filter('date', dateFilter)
 
-
 firebase.initializeApp(firebaseConfig)
+
 let app
+
 firebase.auth().onAuthStateChanged(() => {
   if (!app) {
     app = new Vue({
-      router,
       store,
+      router,
       render: h => h(App)
     }).$mount('#app')
   }
