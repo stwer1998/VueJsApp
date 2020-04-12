@@ -24,7 +24,6 @@ export default {
       }
     },
     getUid () {
-      console.log('auth getuid')
       const user = firebase.auth().currentUser
       return user ? user.uid : null
     },
